@@ -2,16 +2,9 @@
 
 Ten projekt zawiera materialy do pierwszej iteracji nauki Pythona dla osob, ktore przeszly juz podstawy SQL.
 
-Zakladamy, ze kursant:
-
-- umie myslec tabelami, wierszami, kolumnami i raportami,
-- zna podstawowe SQL: `SELECT`, `WHERE`, `JOIN`, `GROUP BY`,
-- nie musi znac programowania,
-- pracuje lokalnie w PyCharmie.
-
 ## Cel iteracji
 
-Po tej iteracji kursant powinien umiec:
+Po tej iteracji powinienes umiec:
 
 - uruchomic plik `.py` w PyCharmie,
 - uruchomic prosty skrypt z terminala,
@@ -25,7 +18,6 @@ Po tej iteracji kursant powinien umiec:
 
 - `teoria/` - materialy do czytania i omawiania.
 - `zadania/` - zadania dla kursanta.
-- `testy/` - krotkie pytania sprawdzajace.
 - `data/` - male dane treningowe.
 - `examples/` - przykladowe pliki `.py` do uruchamiania.
 
@@ -40,13 +32,3 @@ Po tej iteracji kursant powinien umiec:
 7. `teoria/07_bledy_i_try_except.md`
 8. `teoria/08_mini_pipeline_na_listach.md`
 
-## Jak pracowac
-
-Na zajeciach najpierw omawiamy fragment teorii, potem od razu piszemy kod.
-
-Najwazniejsza zasada:
-
-```text
-Python nie ma byc teoria sama dla siebie.
-Python ma pomoc pobrac dane, przetworzyc dane i zapisac wynik.
-```
