@@ -1,0 +1,7 @@
+[
+  {"id": 1, "country": " pl ", "amount": "120.50", "status": "paid"},
+  {"id": 2, "country": "DE", "amount": "80", "status": "cancelled"},
+  {"id": 3, "country": null, "amount": "200", "status": "paid"},
+  {"id": 4, "country": " fr ", "amount": "50", "status": "pending"}
+]
+
