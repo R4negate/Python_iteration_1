@@ -1,5 +1,7 @@
 # Zadania 06 - funkcje, importy i main
 
+Kazda funkcja obliczeniowa ma zwracac wynik, nie tylko go wypisywac. Wypisywanie oddziel od transformacji. Korzystaj z lekcji 01-06, bez obslugi wyjatkow i comprehensions. Moduly zapisuj w plikach `.py`; zadania nie wymagaja czytania danych z dysku ani instalowania bibliotek.
+
 ## Zadanie 1
 
 Napisz funkcje:
@@ -288,4 +290,64 @@ Wynik ma zawierac:
 - `order_id`,
 - `status`,
 - `order_value`.
+
+## Zadanie 15 - Nazwane argumenty i konfiguracja
+
+Napisz `get_order_segment(amount: float, high_threshold: float = 300) -> str`, ktora zwraca high dla kwoty co najmniej progu i standard w przeciwnym razie. Wywolaj ja pozycyjnie, z argumentami nazwanymi w odwrotnej kolejnosci oraz bez podania progu. Sprawdz kwote dokladnie na progu.
+
+## Zadanie 16 - Dwa niezalezne wywolania
+
+Popraw funkcje, zachowujac mozliwosc przekazania istniejacej listy. Brak podanego `target` ma tworzyc nowa liste dla kazdego wywolania. Gdy lista zostala jawnie przekazana, dopisz do niej rekord i zwroc te sama liste.
+
+```python
+def add_order(order: dict, target: list = []) -> list:
+    target.append(order)
+    return target
+```
+
+Sprawdz dwa wywolania bez target oraz dwa z jedna wspolna lista. Wypisz wyniki i porownania tozsamosci list.
+
+## Zadanie 17 - Funkcja bez zmiany wejscia
+
+```python
+raw_order = {"id": 1, "status": " PAID ", "items": [{"sku": "SQL", "quantity": 2}]}
+```
+
+Napisz `normalize_order`, ktora zwraca nowy rekord z oczyszczonym statusem i nowa lista nowych slownikow pozycji. Zmien ilosc w wyniku na 9 i dopisz pozycje. Oryginal ma pozostac niezmieniony. Nie dodawaj pol do `raw_order` wewnatrz funkcji.
+
+## Zadanie 18 - Kryterium sortowania
+
+```python
+customers = [
+    {"id": 3, "revenue": 100},
+    {"id": 1, "revenue": 250},
+    {"id": 2, "revenue": 250},
+]
+```
+
+Napisz nazwana funkcje kryterium i utworz nowa liste klientow posortowana po revenue malejaco, a przy remisie po ID rosnaco. Nie zmieniaj kolejnosci oryginalu. Funkcja kryterium ma zwracac tuple.
+
+## Zadanie 19 - Modul bez skutkow ubocznych
+
+Przenies `normalize_country` i `is_paid` z wczesniejszych zadan do `transformations.py`. W `main.py` przygotuj przykladowe dane i wypisz wyniki ich przetworzenia w funkcji `main`. Sam import `transformations` nie moze uruchamiac raportu ani wypisywac danych. Sprawdz `python main.py` i `python -c "import transformations"` z katalogu zawierajacego oba pliki.
+
+## Zadanie 20 - Trzy poprawne importy
+
+Utworz trzy osobne krotkie skrypty formatujace dzisiejsza date jako tekst ISO: pierwszy przez `import datetime`, drugi przez `from datetime import date`, trzeci przez alias modulu. W kazdym uzyj nazwy zgodnej z wybranym importem. Nie nazywaj wlasnego pliku `datetime.py`.
+
+## Zadanie 21 - Raport w trzech plikach
+
+```python
+orders = [
+    {"id": 1, "country": " pl ", "amount": 100, "status": " PAID "},
+    {"id": 2, "country": "DE", "amount": 80, "status": "pending"},
+    {"id": 3, "country": "PL", "amount": 50, "status": "paid"},
+]
+```
+
+W `transformations.py` umiesc funkcje normalizujaca jeden rekord bez zmiany wejscia. W `metrics.py` funkcje zwracajaca liczbe i sume paid per kraj; tworz grupy tylko dla krajow z paid. W `main.py` polacz etapy, wypisz raport po krajach i dodaj blok startowy. Wszystkie podane pola sa wymagane i poprawne. Uruchom program rowniez przez `python -m main` z katalogu projektu.
+
+## Zadanie 22 - Zaleznosc i wlasny kod
+
+Zbuduj pakiet `reporting` z plikiem `__init__.py` oraz modulem `formatters.py`. W nim umiesc `format_amount(amount: float) -> str`, ktora zwraca kwote z dwoma miejscami i dopiskiem PLN. Wywolaj ja z glownego `main.py`. Projekt ma dzialac bez `pip install`, a import pakietu nie moze sam wypisywac komunikatow.
 

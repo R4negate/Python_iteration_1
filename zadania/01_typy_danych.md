@@ -1,5 +1,7 @@
 # Zadania 01 - typy danych
 
+Po lekcji 01 pracuj bez petli, warunkow, f-stringow i metod oczyszczania tekstu. Odpowiedzia jest kod. Kazde zadanie uruchamiaj osobno; nie wpisuj wyliczonych wynikow na sztywno. Import `Decimal` jest czescia tej lekcji.
+
 ## Zadanie 1
 
 Utworz plik `01_typy_danych.py`.
@@ -54,7 +56,7 @@ Nastepnie:
 
 1. wypisz `order_id`,
 2. wypisz `status`,
-3. pobierz `country`, oczysc go do postaci `"PL"` i wypisz,
+3. pobierz `country` i wypisz jego surowa wartosc oraz typ,
 4. pobierz `amount`, zamien na `float` i wypisz.
 
 ## Zadanie 4
@@ -136,13 +138,7 @@ Bez petli:
 1. pobierz kwote pierwszego zamowienia i zamien ja na `float`,
 2. pobierz kraj drugiego zamowienia,
 3. pobierz status trzeciego zamowienia,
-4. stworz zmienna `summary`, ktora bedzie tekstem:
-
-```text
-First amount: 100.5, second country: DE, third status: paid
-```
-
-Uzyj f-stringa.
+4. stworz slownik `summary` z polami `first_amount` jako `float`, `second_country` i `third_status`, pobranymi z tych rekordow, i wypisz go.
 
 ## Zadanie 9
 
@@ -190,8 +186,34 @@ email_2 = ""
 orders_count = 0
 ```
 
-Wypisz:
+Wypisz kazda wartosc wraz z jej typem. Zapisz je takze w slowniku `snapshot`, zachowujac oryginalne typy. Nie zamieniaj `None`, pustego tekstu ani zera na wspolny znacznik.
 
-- `email_1 is missing`, jezeli `email_1` to `None`,
-- `email_2 is empty`, jezeli `email_2` to pusty tekst,
-- `orders_count is zero`, jezeli `orders_count` wynosi `0`.
+## Zadanie 12 - Pusty pojemnik i jeden element
+
+Utworz pusta liste, pusty slownik, pusty set i pusta tuple. Utworz tez tuple zawierajaca tylko tekst `"PL"`. Wypisz wartosci i typy wszystkich pieciu obiektow.
+
+## Zadanie 13 - Kod to nie zawsze liczba
+
+```python
+raw_postal_code = "00123"
+raw_quantity = "3"
+raw_unit_price = "19.99"
+```
+
+Zbuduj slownik `line` z `postal_code` zachowanym jako tekst, `quantity` jako `int` i `unit_price` jako `Decimal` utworzony bezposrednio z tekstu. Dodaj `line_value` obliczone z ilosci i ceny. Wypisz rekord i typy jego czterech wartosci, odwolujac sie do nich bez petli.
+
+## Zadanie 14 - Rozne typy w rekordzie
+
+```python
+response = {
+    "source": "shop",
+    "orders": [
+        {"id": 101, "amount": "0.00", "tags": {"new", "web"}},
+        {"id": 102, "amount": "25.50", "tags": set()},
+    ],
+    "date_range": ("2026-10-01", "2026-10-31"),
+    "next_page": None,
+}
+```
+
+Pobierz ID drugiego zamowienia, set tagow pierwszego, koncowa date i `next_page`. Zbuduj nowy slownik z tymi wartosciami oraz kwota pierwszego zamowienia jako `Decimal`. Wypisz wynik bez zmiany `response`.

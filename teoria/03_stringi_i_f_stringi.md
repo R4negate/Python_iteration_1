@@ -87,6 +87,38 @@ Ostatni znak mozna pobrac tak:
 print(country[-1])
 ```
 
+## Wycinki tekstu: `start:stop:step`
+
+Indeks wybiera jeden znak, a wycinek, czyli slicing, wybiera fragment tekstu. Zapis `text[start:stop:step]` opisuje poczatek, granice konca i krok. Granica `stop` nie nalezy do wyniku, tak jak koniec w `range` z pozniejszej lekcji.
+
+```python
+text = "PYTHON"
+
+print(text[0:2])
+print(text[2:])
+print(text[:-1])
+print(text[::2])
+print(text[::-1])
+print(text)
+```
+
+Wynik:
+
+```text
+PY
+THON
+PYTHO
+PTO
+NOHTYP
+PYTHON
+```
+
+`[0:2]` bierze indeksy 0 i 1. Brak `stop` oznacza dojscie do konca. `[:-1]` pomija ostatni znak. `[::2]` wybiera co drugi znak od poczatku, a `[::-1]` odwraca kolejnosc. Przy dodatnim kroku pominiety start oznacza poczatek; przy ujemnym Python dobiera granice odpowiednie do przechodzenia wstecz.
+
+Wycinek nie zmienia stringa. `text[20:30]` zwroci pusty tekst, chociaz pojedynczy odczyt `text[20]` zglosilby `IndexError`. Zbyt dalekie granice wycinka sa przycinane. Krok nie moze wynosic zero. Ujemny krok nie oznacza ujemnej liczby powtorzen: zmienia kierunek wybierania.
+
+Praktyczny przyklad: z kodu `"SQL-001"` odczytasz rodzine produktu przez `code[:3]`, a koncowe trzy znaki przez `code[-3:]`. To ma sens tylko wtedy, gdy znasz format kodu; wycinek sam go nie waliduje.
+
 ## Dlugosc tekstu
 
 `len()` zwraca dlugosc tekstu:
@@ -389,6 +421,37 @@ Wynik:
 
 To jeszcze nie jest prawdziwe czytanie CSV, ale pokazuje, ze tekst mozna rozbijac.
 
+## `.join()`: z wielu tekstow jeden tekst
+
+`.split()` dzieli string na elementy, a `.join()` laczy tekstowe elementy, wstawiajac miedzy nimi wybrany separator. Metode wywolujemy na separatorze, nie na liscie.
+
+```python
+countries = ["PL", "DE", "FR"]
+country_list = ", ".join(countries)
+
+print(country_list)
+print(" | ".join(countries))
+print("-".join(countries))
+print("".join(countries))
+```
+
+Wyniki: `PL, DE, FR`, `PL | DE | FR`, `PL-DE-FR` i `PLDEFR`. Separator nie jest dopisywany przed pierwszym ani po ostatnim elemencie. `", ".join([])` daje pusty tekst. Lista wejsciowa pozostaje bez zmian.
+
+```python
+raw_name = "  Anna   Kowalska  "
+parts = raw_name.split()
+name = " ".join(parts)
+
+print(parts)
+print(name)
+```
+
+Wynik to lista `['Anna', 'Kowalska']` oraz tekst `Anna Kowalska`. `split()` bez argumentu dzieli po bialych znakach i nie zachowuje pustych fragmentow pomiedzy nimi. W odroznieniu od tego `"A,,B".split(",")` zachowuje pusty element pomiedzy dwoma przecinkami.
+
+`join` wymaga stringow, nie robi automatycznie `str` dla liczb lub `None`. `", ".join([1, 2])` zglosiloby `TypeError`: dane trzeba najpierw swiadomie przeksztalcic, a nie ukrywac ich typ.
+
+Laczenie kilku elementow jest przydatne w raporcie tekstowym. Nie zastepuje jednak poprawnego zapisu CSV, ktory musi obslugiwac m.in. separatory wewnatrz pol i cudzyslowy.
+
 ## Laczenie tekstu: `+`
 
 Tekst mozna laczyc przez `+`:
@@ -538,6 +601,12 @@ path = ...
 print(...)
 ```
 
+## Dodatkowe cwiczenia: wycinki i skladanie tekstu
+
+1. Dla `code = "SQL-2026-001"` wyciagnij osobno `SQL`, `2026` i `001`, bez zmiany zrodla.
+2. Dla `countries = ["PL", "DE", "FR"]` zbuduj tekst `PL / DE / FR`, bez separatora na koncu.
+3. Dla `name = "  Anna\t  Kowalska  "` zbuduj tekst z jedna spacja miedzy czesciami i bez skrajnych bialych znakow.
+
 ## Najwazniejsze zasady
 
 1. String to tekst.
@@ -564,3 +633,7 @@ print(...)
 8. Jak wyswietlic liczbe do 2 miejsc po przecinku?
 9. Dlaczego czyszczenie tekstu jest wazne w data engineeringu?
 10. Czym rozni sie `None` od pustego tekstu `""`?
+11. Czy granica konca wycinka nalezy do wyniku?
+12. Co oznacza `text[::-1]` i dlaczego nie zmienia zrodla?
+13. Dlaczego separator stoi przed `.join(...)`, a nie jako argument listy?
+14. Czym rozni sie `split()` od `split(",")` dla pustych fragmentow?

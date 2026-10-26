@@ -1,5 +1,7 @@
 # Zadania 03 - stringi, czyszczenie tekstu i f-stringi
 
+Korzystaj z lekcji 01-03. Zadania sa niezalezne; nie potrzebujesz petli ani funkcji. Zachowuj surowe wartosci, a oczyszczone zapisuj pod nowymi nazwami.
+
 ## Zadanie 1
 
 Masz dane:
@@ -197,3 +199,52 @@ Oczysc nazwe pliku tak, aby:
 - zamienic tekst na male litery,
 - sprawdzic, czy nazwa zaczyna sie od `orders`,
 - sprawdzic, czy nazwa konczy sie na `.json`.
+
+## Zadanie 13 - Fragmenty nazwy eksportu
+
+```python
+file_name = "orders_2026-10-12_PL.csv"
+```
+
+Pobierz wycinkami tekstu nazwe zrodla, date, kraj i rozszerzenie bez kropki. Zbuduj z nich slownik `file_info`. Dla tej samej nazwy wypisz tez ostatnie trzy znaki, co drugi znak oraz tekst w odwrotnej kolejnosci. Nie zmieniaj `file_name`.
+
+## Zadanie 14 - Separator ma znaczenie
+
+```python
+raw_line = " 1001   paid   PL "
+raw_row = "1001||PL|"
+```
+
+Z pierwszej wartosci uzyskaj trzy pola mimo wielokrotnych spacji. Z drugiej uzyskaj cztery pola, zachowujac dwa puste teksty. Z pol drugiej wartosci zbuduj tekst rozdzielony srednikami, bez usuwania pustych pol.
+
+## Zadanie 15 - Budowanie naglowka
+
+```python
+columns = ["order_id", "status", "amount"]
+```
+
+Utworz `header` o wartosci `order_id;status;amount`. Wypisz tez wynik laczenia pustej listy oraz listy z jednym tekstem `order_id` przy tym samym separatorze.
+
+## Zadanie 16 - Prezentacja nie zmienia kwoty
+
+```python
+from decimal import Decimal
+
+amount = Decimal("129.995")
+```
+
+Zbuduj komunikat `Amount: 130.00 PLN` z formatowaniem kwoty do dwoch miejsc. Osobno wypisz oryginalna kwote i jej typ, bez przypisywania sformatowanego tekstu do `amount`.
+
+## Zadanie 17 - Dane do komunikatu kontrolnego
+
+```python
+raw_id = " 1001 "
+raw_status = " PAID "
+raw_amount = " 120,50 "
+```
+
+Zbuduj slownik z ID jako `int`, statusem malymi literami i kwota jako `Decimal` utworzony z oczyszczonego tekstu. Wypisz komunikat `Order 1001: paid, amount=120.50`. Dodatkowo wypisz surowy status tak, aby w konsoli bylo widac granice tekstu i spacje.
+
+## Zadanie 18 - Brak a pusty tekst
+
+Przetworz osobno `None`, `""`, `"   "` i `" PL "`. Dla `None` ustaw wynik `missing`, dla pustego tekstu po oczyszczeniu `empty`, dla pozostalych kod kraju wielkimi literami. Wykonaj to bez petli i bez wywolania metody stringa na `None`.

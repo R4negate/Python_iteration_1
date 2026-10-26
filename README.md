@@ -26,9 +26,10 @@ Po tej iteracji powinienes umiec:
 1. `teoria/01_typy_danych.md` - typy podstawowe i zlozone.
 2. `teoria/02_zmienne_operatory_logika.md` - zmienne, operatory i podstawowa logika.
 3. `teoria/03_stringi_i_f_stringi.md` - stringi, czyszczenie tekstu i f-stringi.
-4. `teoria/04_listy_slowniki_tuple_set.md`
-5. `teoria/05_if_petle_i_logika.md`
-6. `teoria/06_funkcje_importy_main.md`
+4. `teoria/04_listy_slowniki_tuple_set.md` - operacje, wycinki, kopie, sortowanie, rozpakowanie i zip.
+5. `teoria/05_if_petle_i_logika.md` - warunki, for/while, zagniezdzenia i funkcje agregujace.
+6. `teoria/06_funkcje_importy_main.md` - funkcje, argumenty, skutki uboczne, kryteria sortowania i importy.
 7. `teoria/07_bledy_i_try_except.md`
 8. `teoria/08_mini_pipeline_na_listach.md`
+9. `teoria/09_list_comprehensions.md` - czytelne list, set i dict comprehensions po zwyklych petlach.
 
