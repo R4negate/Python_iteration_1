@@ -310,3 +310,19 @@ values = [1001, "paid", 120]
 ```
 
 Zbuduj liste par pole-wartosc oraz slownik `row`. Dlugosci maja byc kontrolowane przez `zip(..., strict=True)`. Osobno, na nowych danych z `values = [1001, "paid"]`, uruchom materializacje par i zaobserwuj blad bez jego obslugi. Bledny wariant uruchamiaj oddzielnie, zeby nie zatrzymal poprawnych zadan.
+
+## Zadanie 25 - Rozpakowanie z reszta
+
+```python
+order_ids = [1001, 1002, 1003, 1004]
+```
+
+Rozpakuj liste do first_id, middle_ids i last_id tak, aby srodek byl lista pozostalych ID. Ten sam kod ma dzialac dla listy dwuelementowej, dajac pusty srodek. Zakladamy co najmniej dwa elementy.
+
+## Zadanie 26 - Tuple ze zmienialnym elementem
+
+```python
+batch = ("shop", [1001, 1002])
+```
+
+Dopisz 1003 do listy wewnatrz batch, bez przypisywania nowej wartosci do miejsca tuple. Wypisz batch. Osobno utworz set z para `(1, 1001)` i ponownie dodaj te sama pare; wypisz jego dlugosc. Nie probuj dodawac tuple zawierajacej liste do setu.

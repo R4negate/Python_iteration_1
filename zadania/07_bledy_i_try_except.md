@@ -234,5 +234,5 @@ Napisz dwa osobne warianty: try obejmujace cala petle oraz try wewnatrz petli. W
 values = [" 120,50 ", "0", "abc", "", None, "-1"]
 ```
 
-Zbuduj parser wymagajacy stringa z niepustym zapisem nieujemnej kwoty. W tych danych poprawne zapisy liczbowe zawieraja wylacznie cyfry, opcjonalny minus i separator kropka lub przecinek. Zwracaj Decimal bez przejscia przez float. Niepoprawny typ to TypeError, brak tresci, bledny zapis lub ujemna kwota to ValueError; blad konwersji Decimal obsluz jako InvalidOperation. W petli zachowaj poprawne Decimal i odrzucenia z numerem wiersza oraz powodem. Zero ma zostac zachowane.
+Zbuduj parser wymagajacy stringa z niepustym zapisem nieujemnej kwoty. W tych danych poprawne zapisy liczbowe zawieraja wylacznie cyfry, opcjonalny minus i separator kropka lub przecinek. Zwracaj Decimal bez przejscia przez float. Niepoprawny typ to TypeError, brak tresci, bledny zapis lub ujemna kwota to ValueError. InvalidOperation z konwersji Decimal przechwyc w parserze i zamien na ValueError, zachowujac przyczyne. W petli zachowaj poprawne Decimal i odrzucenia z numerem wiersza oraz powodem. Zero ma zostac zachowane.
 

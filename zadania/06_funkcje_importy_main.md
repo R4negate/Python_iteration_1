@@ -351,3 +351,19 @@ W `transformations.py` umiesc funkcje normalizujaca jeden rekord bez zmiany wejs
 
 Zbuduj pakiet `reporting` z plikiem `__init__.py` oraz modulem `formatters.py`. W nim umiesc `format_amount(amount: float) -> str`, ktora zwraca kwote z dwoma miejscami i dopiskiem PLN. Wywolaj ja z glownego `main.py`. Projekt ma dzialac bez `pip install`, a import pakietu nie moze sam wypisywac komunikatow.
 
+## Zadanie 23 - JSON w pamieci
+
+```python
+raw_text = '{"order_id": 1001, "country": " pl ", "paid": true, "email": null}'
+```
+
+Napisz funkcje przyjmujaca tekst JSON i zwracajaca nowy tekst JSON z oczyszczonym krajem wielkimi literami. Uzyj modulu json i przetwarzaj tylko string w pamieci, bez plikow. W main wypisz typ wejsciowego tekstu, typ sparsowanego rekordu, typ wartosci paid oraz wynik. Dane sa poprawnym JSON-em o pokazanej strukturze; nie potrzebujesz jeszcze except.
+
+## Zadanie 24 - Data i opis sciezki
+
+```python
+raw_date = "2026-10-12"
+```
+
+Przeksztalc date do obiektu date, odczytaj rok i miesiac, a potem zbuduj obiekt Path opisujacy `data/raw/orders_2026-10-12.json`. Wypisz te wartosci i sama nazwe pliku przez atrybut name. Nie tworz katalogow i nie zapisuj pliku; chodzi o uzycie narzedzi biblioteki standardowej.
+
