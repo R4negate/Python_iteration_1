@@ -283,7 +283,7 @@ Funkcja `calculate_metrics` ma zwrocic slownik z polami:
 
 `unique_countries_count` policz z uzyciem `set`.
 
-Orders_count i przychody obejmuja tylko clean_orders. Total_revenue sumuje wszystkie poprawne statusy, paid_revenue tylko paid. High_orders_count liczy wszystkie poprawne high bez wzgledu na status, a unique_countries_count obejmuje tez UNKNOWN, jesli wystapil. Puste listy daja zerowe liczniki i sumy Decimal("0"). Raw_orders_count = valid_orders_count + invalid_orders_count.
+Liczniki statusow i przychody obejmuja tylko clean_orders. Total_revenue sumuje wszystkie poprawne statusy, paid_revenue tylko paid. High_orders_count liczy wszystkie poprawne high bez wzgledu na status, a unique_countries_count obejmuje tez UNKNOWN, jesli wystapil. Puste listy daja zerowe liczniki i sumy Decimal("0"). Raw_orders_count = valid_orders_count + invalid_orders_count.
 
 ## Raport tekstowy
 

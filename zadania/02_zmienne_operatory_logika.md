@@ -211,3 +211,16 @@ Zaktualizuj `stock` po sprzedazy, a potem po zwrocie. Po kazdym kroku zapisz akt
 ## Zadanie 14 - Granica segmentu
 
 Dla kwot `299`, `300` i `301` oblicz oddzielnie flage `is_high`, ktora oznacza kwote co najmniej 300. Bez petli zbuduj liste trzech slownikow z polami `amount` oraz `is_high` i wypisz ja. Dodatkowo dla zmiennej `amount = 300` ustaw przez `if / else` etykiete `high` lub `standard` zgodnie z ta sama regula.
+
+## Zadanie 15 - Pelne partie i reszta
+
+```python
+records_count = 23
+batch_size = 5
+```
+
+Oblicz liczbe pelnych partii, liczbe rekordow w ostatniej niepelnej partii i liczbe wszystkich potrzebnych partii. Batch_size jest dodatnim intem. Sprawdz rowniez records_count rowne 20 i 0. Bez petli oblicz dodatkowo pojemnosc po trzech podwojeniach startowej wartosci 5, wykorzystujac potegowanie.
+
+## Zadanie 16 - Flaga nie przelicza sie sama
+
+Ustaw status paid i zapisz wynik porownania w is_paid. Potem zmien sam status na cancelled. Wypisz status i zachowana flage. Nastepnie przelicz flage z aktualnego statusu i wypisz ja ponownie. Nie przypisuj True ani False recznie.

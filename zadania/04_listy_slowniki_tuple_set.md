@@ -67,7 +67,7 @@ Zmien `status` na `"paid"`.
 
 Dodaj nowe pole:
 
-```python
+```text
 "country": "PL"
 ```
 
