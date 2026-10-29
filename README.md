@@ -11,6 +11,7 @@ Po tej iteracji powinienes umiec:
 - uzywac zmiennych i podstawowych typow danych,
 - pracowac z listami i slownikami,
 - pisac warunki, petle i funkcje,
+- rozumiec klasy, obiekty, atrybuty i metody oraz uzyc prostego modelu w pipeline,
 - czytac podstawowe bledy Pythona,
 - napisac maly skrypt, ktory przetwarza liste zamowien.
 
@@ -32,4 +33,7 @@ Po tej iteracji powinienes umiec:
 7. `teoria/07_bledy_i_try_except.md`
 8. `teoria/08_mini_pipeline_na_listach.md`
 9. `teoria/09_list_comprehensions.md` - czytelne list, set i dict comprehensions po zwyklych petlach.
+10. [Obiektowosc](teoria/10_obiektowosc.md) - od dicta do modelu, self, init, metody, repr, referencje i kompozycja.
+
+Po lekcji 10 wykonaj [zadania z obiektowosci](zadania/10_obiektowosc.md). Istniejace podsumowanie i pipeline nadal mozna rozwiazac funkcjami; klasy dodawaj tam, gdzie maja konkretna odpowiedzialnosc.
 

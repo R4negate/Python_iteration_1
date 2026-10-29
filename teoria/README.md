@@ -18,6 +18,7 @@ Najwazniejsze skojarzenia dla osob po SQL-u:
 - [05. Warunki i petle](05_if_petle_i_logika.md): for/while, zagniezdzenia, zakres z krokiem, sum/min/max oraz any/all.
 - [06. Funkcje](06_funkcje_importy_main.md): wywolania, mutowalne wartosci domyslne, skutki uboczne i sortowanie przez key.
 - [09. Comprehensions](09_list_comprehensions.md): nowa lekcja po mini-pipeline, z zadaniami wewnatrz materialu.
+- [10. Obiektowosc](10_obiektowosc.md): klasy, obiekty, self, init, metody, repr/str, walidacja, referencje i kompozycja; osobno oznaczone dodatki.
 
 Najpierw opanuj zwykla petle i funkcje, dopiero potem ich zastosowanie w comprehension. W 04 sortujemy najpierw proste wartosci; sortowanie slownikow przez funkcje key pojawia sie dopiero w 06.
 
